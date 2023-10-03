@@ -8,6 +8,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import ListingPage from "./pages/ListingPage/ListingPage";
 import CreateItemPage from "./pages/CreateItemPage/CreateItemPage";
+import ItemPage from "./pages/ItemPage/ItemPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -29,6 +30,7 @@ function App() {
             </PrivateRoute>
           }
         />
+        <Route path="/item/:id" element={<ItemPage />} />
         <Route
           path="/listings"
           element={
