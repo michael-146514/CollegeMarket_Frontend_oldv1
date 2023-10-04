@@ -9,6 +9,7 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import ListingPage from "./pages/ListingPage/ListingPage";
 import CreateItemPage from "./pages/CreateItemPage/CreateItemPage";
 import ItemPage from "./pages/ItemPage/ItemPage";
+import SearchedPage from "./pages/SearchPage/SearchPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -27,6 +28,14 @@ function App() {
           element={
             <PrivateRoute>
               <HomePage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/search"
+          element={
+            <PrivateRoute>
+              <SearchedPage />
             </PrivateRoute>
           }
         />
