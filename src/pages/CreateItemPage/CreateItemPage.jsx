@@ -1,13 +1,13 @@
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import ImageForm from "../../components/ImageForm/ImageForm";
+import CreateItemForm from "../../components/CreateItemForm/CreateItemForm";
 import ImageList from "../../components/ImageListTest/ImageList";
 
 const CreateItemPage = ({}) => {
   return (
     <div>
-      <ImageForm />
+      <CreateItemForm />
     </div>
   );
 };

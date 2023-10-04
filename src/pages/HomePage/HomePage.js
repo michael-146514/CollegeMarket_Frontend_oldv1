@@ -11,12 +11,7 @@ const HomePage = () => {
 
   useEffect(() => {}, [token]);
 
-  return (
-    <div className="container">
-      {console.log(user)}
-      <h1>Home Page for {user.userName}!</h1>
-    </div>
-  );
+  return <div></div>;
 };
 
 export default HomePage;

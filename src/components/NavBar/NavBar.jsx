@@ -28,7 +28,7 @@ const Navbar = () => {
             <b>College Market</b>
           </Link>
         </li>
-        <form onSubmit={handleSearch}>
+        <form onSubmit={handleSearch} className="searchBar">
           <input
             type="text"
             placeholder="Search for items"
@@ -43,12 +43,24 @@ const Navbar = () => {
           />
           <button type="submit">Search</button>
         </form>
-        <li>
-          {user ? (
-            <button onClick={logoutUser}>Logout</button>
-          ) : (
-            <button onClick={() => navigate("/login")}>Login</button>
-          )}
+        <li className="user">
+          <div class="dropdown">
+            <button class="dropbtn">
+              User
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              {user ? (
+                <>
+                  <a href="/listings">Your Listings</a>
+                  <a href="/listings">Messages</a>
+                  <a onClick={logoutUser}>Logout</a>
+                </>
+              ) : (
+                <a onClick={() => navigate("/login")}>Login</a>
+              )}
+            </div>
+          </div>
         </li>
       </ul>
     </div>
