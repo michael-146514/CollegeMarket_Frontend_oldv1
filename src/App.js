@@ -11,7 +11,7 @@ import CreateItemPage from "./pages/CreateItemPage/CreateItemPage";
 import ItemPage from "./pages/ItemPage/ItemPage";
 import SearchedPage from "./pages/SearchPage/SearchPage";
 import ConversationsPage from "./pages/ConversationsPage/ConversationsPage";
-
+import MessagePage from "./pages/MessagePage/MessagePage";
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
@@ -41,6 +41,14 @@ function App() {
           element={
             <PrivateRoute>
               <ConversationsPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/conversations/message/:id"
+          element={
+            <PrivateRoute>
+              <MessagePage />
             </PrivateRoute>
           }
         />
