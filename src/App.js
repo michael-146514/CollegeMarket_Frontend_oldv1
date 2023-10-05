@@ -10,6 +10,7 @@ import ListingPage from "./pages/ListingPage/ListingPage";
 import CreateItemPage from "./pages/CreateItemPage/CreateItemPage";
 import ItemPage from "./pages/ItemPage/ItemPage";
 import SearchedPage from "./pages/SearchPage/SearchPage";
+import ConversationsPage from "./pages/ConversationsPage/ConversationsPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -23,36 +24,23 @@ function App() {
     <div>
       <Navbar />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <PrivateRoute>
-              <HomePage />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/search"
-          element={
-            <PrivateRoute>
-              <SearchedPage />
-            </PrivateRoute>
-          }
-        />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/search" element={<SearchedPage />} />
         <Route path="/item/:id" element={<ItemPage />} />
-        <Route
-          path="/listings"
-          element={
-            <PrivateRoute>
-              <ListingPage />
-            </PrivateRoute>
-          }
-        />
+        <Route path="/listings" element={<ListingPage />} />
         <Route
           path="/listings/create"
           element={
             <PrivateRoute>
               <CreateItemPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/conversations"
+          element={
+            <PrivateRoute>
+              <ConversationsPage />
             </PrivateRoute>
           }
         />

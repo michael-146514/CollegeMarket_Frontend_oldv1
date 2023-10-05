@@ -31,7 +31,7 @@ const DisplayCategories = ({ categorie }) => {
           <h3>No Search Result!</h3>
         ) : (
           <ul>
-            {products.slice(0, 4).map((product) => (
+            {products.slice(0, 5).map((product) => (
               <li key={product.id}>
                 <Link to={`/item/${product.id}`}>
                   <img

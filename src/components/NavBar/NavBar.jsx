@@ -55,7 +55,7 @@ const Navbar = () => {
               {user ? (
                 <>
                   <a href="/listings">Your Listings</a>
-                  <a href="/listings">Messages</a>
+                  <a href="/conversations">Messages</a>
                   <a onClick={logoutUser}>Logout</a>
                 </>
               ) : (
