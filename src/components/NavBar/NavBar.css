@@ -9,7 +9,7 @@ li {
 }
 
 .navBar {
-  background: steelblue;
+  background: #22333b;
   box-shadow: 4px 2px 5px gray;
   color: white;
   margin-bottom: 2rem;
@@ -55,7 +55,7 @@ li {
 /* Add a red background color to navbar links on hover */
 .navbar a:hover,
 .dropdown:hover .dropbtn {
-  background-color: rgba(156, 146, 146, 0);
+  background-color: rgba(255, 255, 255, 0);
 }
 
 /* Dropdown content (hidden by default) */
