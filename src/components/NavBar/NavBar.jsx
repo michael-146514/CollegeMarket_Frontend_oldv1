@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import "./NavBar.css";
 import { useState } from "react";
+import { FaUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
   const { logoutUser, user } = useContext(AuthContext);
@@ -46,7 +47,8 @@ const Navbar = () => {
         <li className="user">
           <div class="dropdown">
             <button class="dropbtn">
-              User
+              <FaUserCircle size={35} />
+
               <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
