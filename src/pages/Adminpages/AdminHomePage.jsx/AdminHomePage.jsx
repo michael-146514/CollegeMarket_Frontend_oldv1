@@ -1,7 +1,14 @@
+import { Link } from "react-router-dom";
+
 const AdminHomePage = ({}) => {
   return (
     <div>
-      <h1>Hello Fellow Admins:)</h1>
+      <Link to={`/admin/search/user`}>
+        <button>Search Users</button>
+      </Link>
+      <Link to={`/admin/search/listing`}>
+        <button>Search Listing</button>
+      </Link>
     </div>
   );
 };

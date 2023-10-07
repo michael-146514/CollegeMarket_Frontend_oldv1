@@ -10,6 +10,7 @@ const RegisterPage = () => {
     password: "",
     firstName: "",
     lastName: "",
+    isAdmin: false,
   };
   const [formData, handleInputChange, handleSubmit] = useCustomForm(
     registerUser,

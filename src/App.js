@@ -12,6 +12,11 @@ import ItemPage from "./pages/ItemPage/ItemPage";
 import SearchedPage from "./pages/SearchPage/SearchPage";
 import ConversationsPage from "./pages/ConversationsPage/ConversationsPage";
 import MessagePage from "./pages/MessagePage/MessagePage";
+
+//Admin Pages imports
+import AdminHomePage from "./pages/Adminpages/AdminHomePage.jsx/AdminHomePage";
+import AdminSearchUser from "./pages/Adminpages/AdminSearchUser/AdminSearchUser";
+
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
@@ -52,6 +57,23 @@ function App() {
             </PrivateRoute>
           }
         />
+        <Route
+          path="/admin/home"
+          element={
+            <PrivateRoute>
+              <AdminHomePage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/admin/search/user"
+          element={
+            <PrivateRoute>
+              <AdminSearchUser />
+            </PrivateRoute>
+          }
+        />
+
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
