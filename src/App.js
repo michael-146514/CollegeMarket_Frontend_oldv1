@@ -16,6 +16,7 @@ import MessagePage from "./pages/MessagePage/MessagePage";
 //Admin Pages imports
 import AdminHomePage from "./pages/Adminpages/AdminHomePage.jsx/AdminHomePage";
 import AdminSearchUser from "./pages/Adminpages/AdminSearchUser/AdminSearchUser";
+import AdminManageUser from "./pages/Adminpages/AdminManageUser/AdminManageUser";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -58,7 +59,7 @@ function App() {
           }
         />
         <Route
-          path="/admin/home"
+          path="/admin"
           element={
             <PrivateRoute>
               <AdminHomePage />
@@ -66,10 +67,18 @@ function App() {
           }
         />
         <Route
-          path="/admin/search/user"
+          path="/admin/search"
           element={
             <PrivateRoute>
               <AdminSearchUser />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/admin/search/user/:id"
+          element={
+            <PrivateRoute>
+              <AdminManageUser />
             </PrivateRoute>
           }
         />

@@ -11,6 +11,7 @@ const RegisterPage = () => {
     firstName: "",
     lastName: "",
     isAdmin: false,
+    isActive: true,
   };
   const [formData, handleInputChange, handleSubmit] = useCustomForm(
     registerUser,

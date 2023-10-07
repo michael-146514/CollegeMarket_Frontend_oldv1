@@ -28,7 +28,7 @@ const AdminSearchUser = () => {
 
   useEffect(() => {
     fetchUsers();
-  }, [context]); // Add context as a dependency to useEffect
+  }, [context]);
 
   return (
     <div>
