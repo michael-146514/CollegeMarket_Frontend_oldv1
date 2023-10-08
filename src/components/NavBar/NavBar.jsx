@@ -10,6 +10,7 @@ const Navbar = () => {
   const { logoutUser, user } = useContext(AuthContext);
   const navigate = useNavigate();
   const isAdmin = user.isAdmin;
+  console.log(isAdmin);
 
   const [query, setQuery] = useState("");
   const [zipcode, setZipcode] = useState("");

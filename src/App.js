@@ -10,6 +10,7 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import ListingPage from "./pages/ListingPage/ListingPage";
 import CreateItemPage from "./pages/CreateItemPage/CreateItemPage";
 import ItemPage from "./pages/ItemPage/ItemPage";
+import EditItemPage from "./pages/EditItemPage/EditItemPage";
 import SearchedPage from "./pages/SearchPage/SearchPage";
 import ConversationsPage from "./pages/ConversationsPage/ConversationsPage";
 import MessagePage from "./pages/MessagePage/MessagePage";
@@ -29,6 +30,9 @@ import Footer from "./components/Footer/Footer";
 import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
+  const [user, token] = useAuth();
+
+  console.log(user.isAdmin);
   return (
     <div>
       <Navbar />
@@ -42,6 +46,14 @@ function App() {
           element={
             <PrivateRoute>
               <CreateItemPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/listings/edit/:id"
+          element={
+            <PrivateRoute>
+              <EditItemPage />
             </PrivateRoute>
           }
         />
@@ -61,6 +73,7 @@ function App() {
             </PrivateRoute>
           }
         />
+
         <Route
           path="/admin"
           element={

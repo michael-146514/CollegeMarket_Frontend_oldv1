@@ -47,7 +47,7 @@ const ItemRowsListings = ({}) => {
       <ul>
         {Listings.map((listing) => (
           <li key={listing.id}>
-            <Link to={`/item/${listing.id}`}>
+            <Link to={`/listings/edit/${listing.id}`}>
               {listing.imageUrls.length > 0 && (
                 <img
                   src={`https://localhost:5001/images/${listing.imageUrls[0].url}`}

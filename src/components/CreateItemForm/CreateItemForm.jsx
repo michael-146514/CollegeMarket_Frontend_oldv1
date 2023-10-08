@@ -10,7 +10,6 @@ export default function ProductForm() {
   const [condition, setCondition] = useState("");
   const [zipcode, setZipcode] = useState("");
   const [isActive, setIsActive] = useState(true);
-
   const [image, setImage] = useState(null);
 
   const categories = [
@@ -53,6 +52,8 @@ export default function ProductForm() {
     formData.append("category", category);
     formData.append("zipcode", zipcode);
     formData.append("isActive", isActive);
+    formData.append("status", "Available");
+
     if (image !== null) {
       formData.append("Images", image);
     }
