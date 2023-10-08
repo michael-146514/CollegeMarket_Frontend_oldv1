@@ -45,7 +45,7 @@ const AdminUserListing = ({ id, username }) => {
       <ul>
         {Listings.map((listing) => (
           <li key={listing.id}>
-            <Link to={`/item/${listing.id}`}>
+            <Link to={`/admin/search/listing/${listing.id}`}>
               {listing.imageUrls.length > 0 && (
                 <img
                   src={`https://localhost:5001/images/${listing.imageUrls[0].url}`}

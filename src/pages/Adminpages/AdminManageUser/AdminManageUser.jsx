@@ -7,7 +7,7 @@ import AdminUserListing from "../../../components/AdminUserListing/AdminUserList
 const AdminManageUser = () => {
   const { id } = useParams();
 
-  const [userData, setUserData] = useState(null);
+  const [userData, setUserData] = useState([]);
   const [user, token] = useAuth();
 
   const fetchUser = async () => {
@@ -20,7 +20,7 @@ const AdminManageUser = () => {
           },
         }
       );
-      console.log(response.data);
+
       // Update the state with the fetched user data
       setUserData(response.data);
     } catch (error) {
@@ -82,13 +82,19 @@ const AdminManageUser = () => {
         </form>
       </div>
       <div>
-        <ul>
-          {userData.map((user) => (
-            <li key={user.id}>
-              <AdminUserListing username={user.userName} id={user.id} />
-            </li>
-          ))}
-        </ul>
+        {userData ? (
+          <div>
+            <ul>
+              {userData.map((user) => (
+                <li key={user.id}>
+                  <AdminUserListing id={user.id} username={user.userName} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <p>Loading user Listings...</p>
+        )}
       </div>
     </div>
   );

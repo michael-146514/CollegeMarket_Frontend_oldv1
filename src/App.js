@@ -1,5 +1,6 @@
 // General Imports
 import { Routes, Route } from "react-router-dom";
+import useAuth from "./hooks/useAuth";
 import "./App.css";
 
 // Pages Imports
@@ -17,6 +18,8 @@ import MessagePage from "./pages/MessagePage/MessagePage";
 import AdminHomePage from "./pages/Adminpages/AdminHomePage.jsx/AdminHomePage";
 import AdminSearchUser from "./pages/Adminpages/AdminSearchUser/AdminSearchUser";
 import AdminManageUser from "./pages/Adminpages/AdminManageUser/AdminManageUser";
+import AdminManageListing from "./pages/Adminpages/AdminManageListing/AdminManageListing";
+import AdminSearchListing from "./pages/Adminpages/AdminSearchListings/AdminSearchListings";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -67,10 +70,18 @@ function App() {
           }
         />
         <Route
-          path="/admin/search"
+          path="/admin/search/user"
           element={
             <PrivateRoute>
               <AdminSearchUser />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/admin/search/listing"
+          element={
+            <PrivateRoute>
+              <AdminSearchListing />
             </PrivateRoute>
           }
         />
@@ -82,7 +93,14 @@ function App() {
             </PrivateRoute>
           }
         />
-
+        <Route
+          path="/admin/search/listing/:id"
+          element={
+            <PrivateRoute>
+              <AdminManageListing />
+            </PrivateRoute>
+          }
+        />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>

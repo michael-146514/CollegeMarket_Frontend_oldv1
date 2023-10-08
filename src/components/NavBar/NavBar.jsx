@@ -9,6 +9,7 @@ import { FaUserCircle } from "react-icons/fa";
 const Navbar = () => {
   const { logoutUser, user } = useContext(AuthContext);
   const navigate = useNavigate();
+  const isAdmin = user.isAdmin;
 
   const [query, setQuery] = useState("");
   const [zipcode, setZipcode] = useState("");
@@ -57,6 +58,16 @@ const Navbar = () => {
                   <a href="/listings">Your Listings</a>
                   <a href="/conversations">Messages</a>
                   <a onClick={logoutUser}>Logout</a>
+
+                  {isAdmin ? (
+                    <>
+                      <a href="/listings">Your Listings</a>
+                      <a href="/conversations">Messages</a>
+                      <a onClick={logoutUser}>Logout</a>
+                    </>
+                  ) : (
+                    <a onClick={() => navigate("/login")}>Login</a>
+                  )}
                 </>
               ) : (
                 <a onClick={() => navigate("/login")}>Login</a>
