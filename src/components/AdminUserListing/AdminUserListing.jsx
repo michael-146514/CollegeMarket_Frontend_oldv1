@@ -44,7 +44,7 @@ const AdminUserListing = ({ id, username }) => {
       <h3>{username}'s Listings</h3>
       <ul>
         {Listings.map((listing) => (
-          <li key={listing.id}>
+          <li key={listing.id} className="ListingItem">
             <Link to={`/admin/search/listing/${listing.id}`}>
               {listing.imageUrls.length > 0 && (
                 <img
@@ -54,7 +54,7 @@ const AdminUserListing = ({ id, username }) => {
                   height="100"
                 />
               )}
-              {listing.title}
+              <div>{listing.title}</div>
             </Link>
           </li>
         ))}

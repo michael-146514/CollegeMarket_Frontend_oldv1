@@ -57,7 +57,7 @@ const AdminManageUser = () => {
   return (
     <div>
       {userData ? (
-        <div>
+        <div className="CreateBox">
           <ul>
             {userData.map((user) => (
               <li key={user.id}>
@@ -74,14 +74,14 @@ const AdminManageUser = () => {
         <p>Loading user data...</p>
       )}
 
-      <div>
+      <div className="CreateBox">
         <form onSubmit={handleDisableUser}>
           <button type="submit">
             <h3>Suspend User</h3>
           </button>
         </form>
       </div>
-      <div>
+      <div className="CreateBox">
         {userData ? (
           <div>
             <ul>

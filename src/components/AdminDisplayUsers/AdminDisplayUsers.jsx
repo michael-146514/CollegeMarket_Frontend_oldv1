@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 const AdminDisplayUser = ({ Username, Firstname, LastName, id, email }) => {
   return (
     <div>
-      <div>
+      <div className="ListingItem">
         <Link to={`/admin/search/user/${id}`}>
           <h3>Username: {Username}</h3>
           <h3>

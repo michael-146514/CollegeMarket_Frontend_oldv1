@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
+import "./AdminHomePage.css";
 
 const AdminHomePage = ({}) => {
   return (
-    <div>
+    <div className="AdminButtons">
       <Link to={`/admin/search/user`}>
-        <button>Search Users</button>
+        <button className="ButtonItself">Search Users</button>
       </Link>
       <Link to={`/admin/search/listing`}>
-        <button>Search Listing</button>
+        <button className="ButtonItself">Search Listing</button>
       </Link>
     </div>
   );

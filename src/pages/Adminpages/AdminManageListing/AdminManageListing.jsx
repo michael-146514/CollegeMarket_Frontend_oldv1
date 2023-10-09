@@ -100,7 +100,7 @@ const AdminManageListing = () => {
 
   return (
     <div>
-      <div>
+      <div className="CreateBox">
         <ItemDetails
           imageNames={item.imageUrls}
           title={item.title}
@@ -115,7 +115,7 @@ const AdminManageListing = () => {
       <div>
         {userData ? (
           <div>
-            <ul>
+            <ul className="CreateBox">
               {userData.map((user) => (
                 <li key={user.id}>
                   <li>UserName: {user.userName}</li>
@@ -134,7 +134,7 @@ const AdminManageListing = () => {
           <p>Loading user data...</p>
         )}
       </div>
-      <div>
+      <div className="CreateBox">
         <form onSubmit={handleDisableListing}>
           <button type="submit">
             <h3>Suspend Listing</h3>

@@ -29,7 +29,9 @@ const DisplayCategories = ({ categorie }) => {
 
       <div>
         {products.length < 1 ? (
-          <h3>No Search Result!</h3>
+          <div className="ListingItem">
+            <h3>No Search Result!</h3>
+          </div>
         ) : (
           <ul className="itemrow">
             {products.slice(0, 6).map((product) => (

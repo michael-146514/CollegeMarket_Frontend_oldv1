@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const AdminDisplayListing = ({ ProductId, ImageUrl, Title, Price }) => {
   return (
-    <div>
+    <div className="ListingItem">
       <div>
         <Link to={`/admin/search/listing/${ProductId}`}>
           <img

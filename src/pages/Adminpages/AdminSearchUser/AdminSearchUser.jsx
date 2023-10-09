@@ -31,11 +31,12 @@ const AdminSearchUser = () => {
   }, [context]);
 
   return (
-    <div>
+    <div className="CreateBox">
       <div>
         <form>
           <input
             type="text"
+            className="TextInput"
             value={context}
             onChange={(event) => setContext(event.target.value)}
           />

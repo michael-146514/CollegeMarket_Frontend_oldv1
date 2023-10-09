@@ -1,0 +1,18 @@
+.AdminButtons {
+  position: absolute;
+  left: 45%;
+  top: 20%;
+  display: flex;
+}
+
+.ButtonItself {
+  background-color: rgb(87, 16, 16);
+  color: whitesmoke;
+  border: none;
+  margin: 10px;
+  padding: 20px;
+}
+
+.ButtonItself:hover {
+  background-color: rgb(131, 15, 15);
+}

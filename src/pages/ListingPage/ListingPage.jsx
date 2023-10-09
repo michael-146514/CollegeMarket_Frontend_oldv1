@@ -6,12 +6,12 @@ import "./ListingPage.css";
 const ListingPage = ({}) => {
   return (
     <div>
-      <div className="ButtonsListings">
+      <div className="CreateBox">
         <Link to={`/listings/create`}>
-          <button>Create Listing</button>
+          <button className="ButtonsListings">Create Listing</button>
         </Link>
         <Link to={`/conversations`}>
-          <button> Messages</button>
+          <button className="ButtonsListings"> Messages</button>
         </Link>
       </div>
       <hr />

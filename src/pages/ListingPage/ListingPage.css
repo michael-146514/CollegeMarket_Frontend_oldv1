@@ -7,7 +7,13 @@
 }
 
 .ButtonsListings {
-  position: relative;
-  left: 50px;
-  align-content: center;
+  background-color: #49403e;
+  border: none;
+  color: whitesmoke;
+
+  margin: 10px;
+}
+
+.ButtonsListings:hover {
+  background-color: #645754;
 }
