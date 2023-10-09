@@ -34,8 +34,8 @@ const MessagePage = ({}) => {
 
   return (
     <div>
-      <div>
-        <ul>
+      <div className="MessageForm">
+        <ul className="Messages">
           {messages.map((messages) => (
             <li key={messages.id}>
               <MessageDisplayForm

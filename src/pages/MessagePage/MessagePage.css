@@ -10,3 +10,18 @@
   align-content: stretch;
   flex-wrap: nowrap;
 }
+
+.MessageForm {
+  top: 50%;
+  width: 1000px;
+  height: auto;
+  margin: 10px;
+  box-shadow: 0px 5px 10px 0px rgba(111 111 111 / 50%);
+}
+
+.Messages {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}

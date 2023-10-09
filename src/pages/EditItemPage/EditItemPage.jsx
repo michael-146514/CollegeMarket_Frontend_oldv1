@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
+import "./EditItemPage.css";
 
 const EditItemPage = () => {
   const { id } = useParams();
@@ -141,7 +142,7 @@ const EditItemPage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="CreateBox">
       <div>
         {images.map((image, index) => (
           <div key={image.title}>
@@ -156,6 +157,7 @@ const EditItemPage = () => {
             <input
               type="text"
               value={title}
+              className="TextInput"
               onChange={(event) => setTitle(event.target.value)}
             />
           </div>
@@ -163,6 +165,7 @@ const EditItemPage = () => {
             <h3>Price</h3>
             <input
               type="text"
+              className="TextInput"
               value={price}
               onChange={(event) => setPrice(event.target.value)}
             />
@@ -171,6 +174,7 @@ const EditItemPage = () => {
             <h3>Description</h3>
             <input
               type="text"
+              className="TextInput"
               value={description}
               onChange={(event) => setDescription(event.target.value)}
             />
