@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import useAuth from "../../hooks/useAuth";
+import "./CreateItemForm.css";
 
 export default function ProductForm() {
   const [title, setTitle] = useState("");
@@ -83,65 +84,88 @@ export default function ProductForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>Title:</label>
-      <input
-        type="text"
-        value={title}
-        onChange={(event) => setTitle(event.target.value)}
-      />
-      <label>Description:</label>
-      <input
-        type="text"
-        value={description}
-        onChange={(event) => setDescription(event.target.value)}
-      />
-      <label>Price:</label>
-      <input
-        type="number"
-        value={price}
-        onChange={(event) => setPrice(event.target.value)}
-      />
-      <label>Condition:</label>
-      <select value={condition} onChange={handleConditionChange}>
-        <option value="">Select a Condition</option>
-        {conditions.map((con, index) => (
-          <option key={index} value={con}>
-            {con}
-          </option>
-        ))}
-      </select>
+    <div className="CreateBox">
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>Title:</label>
+          <input
+            type="text"
+            value={title}
+            className="TextInput"
+            onChange={(event) => setTitle(event.target.value)}
+          />
+        </div>
+        <div>
+          <label>Description:</label>
+          <input
+            type="text"
+            className="TextInput"
+            value={description}
+            onChange={(event) => setDescription(event.target.value)}
+          />
+        </div>
+        <div>
+          <label>Price:</label>
+          <input
+            type="number"
+            className="TextInput"
+            value={price}
+            onChange={(event) => setPrice(event.target.value)}
+          />
+        </div>
+        <div>
+          <label>Condition:</label>
+          <select value={condition} onChange={handleConditionChange}>
+            <option value="">Select a Condition</option>
+            {conditions.map((con, index) => (
+              <option key={index} value={con}>
+                {con}
+              </option>
+            ))}
+          </select>
+        </div>
 
-      <label>Category:</label>
-      <select value={category} onChange={handleCategoryChange}>
-        <option value="">Select a category</option>
-        {categories.map((cat, index) => (
-          <option key={index} value={cat}>
-            {cat}
-          </option>
-        ))}
-      </select>
-      <label>Zipcode:</label>
-      <input
-        type="text"
-        value={zipcode}
-        onChange={(event) => setZipcode(event.target.value)}
-      />
-      <label>Is Active:</label>
-      <input
-        type="checkbox"
-        checked={isActive}
-        onChange={(event) => setIsActive(event.target.checked)}
-      />
-
-      <input
-        type="file"
-        name="Images"
-        accept="image/jpeg,image/png,image/gif"
-        multiple
-        onChange={handleImageChange}
-      />
-      <button type="submit">Submit Product!</button>
-    </form>
+        <div>
+          <label>Category:</label>
+          <select value={category} onChange={handleCategoryChange}>
+            <option value="">Select a category</option>
+            {categories.map((cat, index) => (
+              <option key={index} value={cat}>
+                {cat}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label>Zipcode:</label>
+          <input
+            type="text"
+            className="TextInput"
+            value={zipcode}
+            onChange={(event) => setZipcode(event.target.value)}
+          />
+        </div>
+        <div>
+          <label>Is Active:</label>
+          <input
+            type="checkbox"
+            checked={isActive}
+            onChange={(event) => setIsActive(event.target.checked)}
+          />
+        </div>
+        <div>
+          <input
+            type="file"
+            name="Images"
+            accept="image/jpeg,image/png,image/gif"
+            multiple
+            onChange={handleImageChange}
+          />
+        </div>
+        <div>
+          <button type="submit">Submit Product!</button>
+        </div>
+      </form>
+    </div>
   );
 }

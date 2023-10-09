@@ -1,6 +1,7 @@
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import React, { useState } from "react";
+import "./SendMessageForm.css";
 
 const SendMessageForm = ({ conversationId }) => {
   const [content, setContent] = useState("");
@@ -30,18 +31,18 @@ const SendMessageForm = ({ conversationId }) => {
   };
 
   return (
-    <div>
+    <div className="SendMessageForm">
       <form onSubmit={handleSubmit}>
         <div>
           <input
             type="text"
             value={content}
+            className="SendInput"
             onChange={(event) => setContent(event.target.value)}
           />
-        </div>
-        <div>
-          <button type="submit">
-            <h2>Submit</h2>
+
+          <button className="SendButton" type="submit">
+            <h2>Send</h2>
           </button>
         </div>
       </form>

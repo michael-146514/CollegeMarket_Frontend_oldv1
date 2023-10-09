@@ -1,0 +1,22 @@
+.SendInput {
+  font-size: large;
+  text-decoration: none;
+  width: 1200px;
+  height: 30px;
+  border-radius: 5px;
+  margin: 13px;
+  padding-left: 10px;
+}
+
+.SendButton {
+  color: aliceblue;
+  background-color: #49403e;
+  border-radius: 15px;
+  border: none;
+  font-size: small;
+  margin-left: 30px;
+}
+
+.SendButton:hover {
+  background-color: #685d5a;
+}

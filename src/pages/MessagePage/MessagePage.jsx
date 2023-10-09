@@ -4,6 +4,7 @@ import useAuth from "../../hooks/useAuth";
 import React, { useState, useEffect } from "react";
 import MessageDisplayForm from "../../components/MessageDisplayForm/MessageDisplayForm";
 import SendMessageForm from "../../components/SendMessageForm/SendMessageForm";
+import "./MessagePage.css";
 
 const MessagePage = ({}) => {
   const { id } = useParams();
@@ -45,7 +46,7 @@ const MessagePage = ({}) => {
           ))}
         </ul>
       </div>
-      <div>
+      <div className="">
         <SendMessageForm conversationId={id} />
       </div>
     </div>
