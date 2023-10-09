@@ -46,9 +46,13 @@ const CreateMessageForm = ({ SellerId, title }) => {
       {user ? (
         <>
           <div>
-            <form onSubmit={CreateConversations}>
+            <form>
               <div>
-                <button type="button" class="MessageFormButton">
+                <button
+                  onClick={CreateConversations}
+                  type="button"
+                  class="MessageFormButton"
+                >
                   Message Seller
                 </button>
               </div>

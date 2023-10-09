@@ -1,0 +1,6 @@
+.ConversationSmallBox {
+  margin: 35px;
+  padding: 32px;
+  box-shadow: 0px 5px 10px 0px rgba(111 111 111 / 50%);
+  border-radius: 8px;
+}

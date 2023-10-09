@@ -1,0 +1,20 @@
+.SearchBox {
+  padding: 20px;
+  margin: 35px;
+  box-shadow: 0px 5px 10px 0px rgba(111 111 111 / 50%);
+  border-radius: 8px;
+  height: auto;
+}
+
+.SearchText {
+  padding: 5px;
+}
+
+.SearchItemrow {
+  padding: 35px;
+  display: flex;
+  list-style-type: none;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}

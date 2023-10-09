@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import { Link } from "react-router-dom";
+import "./ItemRowListings.css";
 
 const ItemRowsListings = ({}) => {
   const [user, token] = useAuth();
@@ -44,19 +45,23 @@ const ItemRowsListings = ({}) => {
   return (
     <div>
       <h2>Your Listings</h2>
-      <ul>
+      <ul className="SearchItemrow">
         {Listings.map((listing) => (
           <li key={listing.id}>
             <Link to={`/listings/edit/${listing.id}`}>
-              {listing.imageUrls.length > 0 && (
-                <img
-                  src={`https://localhost:5001/images/${listing.imageUrls[0].url}`}
-                  alt={listing.title}
-                  width="100"
-                  height="100"
-                />
-              )}
-              {listing.title}
+              <div className="ListingItem">
+                {listing.imageUrls.length > 0 && (
+                  <img
+                    src={`https://localhost:5001/images/${listing.imageUrls[0].url}`}
+                    alt={listing.title}
+                    width="200"
+                    height="200"
+                  />
+                )}
+                <div>
+                  <h4>{listing.title}</h4>
+                </div>
+              </div>
             </Link>
           </li>
         ))}

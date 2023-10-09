@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import SearchProduct from "../../components/SearchProduct/SearchProduct";
+import "./SearchPage.css";
 
 const SearchedPage = () => {
   const [searchParams] = useSearchParams();
@@ -29,13 +30,13 @@ const SearchedPage = () => {
   }, [query, zipcode]);
 
   return (
-    <div>
-      <h1>Search Results:</h1>
+    <div className="SearchBox">
+      <h1 className="SearchText">Search Results:</h1>
       <div>
         {products.length < 1 ? (
           <h3>No Search Result!</h3>
         ) : (
-          <ul>
+          <ul className="SearchItemrow">
             {products.map((product) => (
               <SearchProduct
                 key={product.id}

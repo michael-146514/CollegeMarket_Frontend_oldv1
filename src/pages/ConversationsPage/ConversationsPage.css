@@ -1,0 +1,20 @@
+.ConversationBox {
+  margin: 35px;
+  box-shadow: 0px 5px 10px 0px rgba(111 111 111 / 50%);
+  border-radius: 8px;
+  height: auto;
+}
+
+.ConversationTitle {
+  padding: 25px;
+}
+
+.Conversation {
+  padding: 10px;
+  display: flex;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: auto;
+  justify-content: space-between;
+}

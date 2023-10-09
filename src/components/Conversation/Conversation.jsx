@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import "./Conversation.css";
 
 const Conversations = ({ title, id }) => {
   return (
-    <div>
+    <div className="ConversationSmallBox">
       <Link to={`/conversations/message/${id}`}>
         <h4>{title}</h4>
       </Link>

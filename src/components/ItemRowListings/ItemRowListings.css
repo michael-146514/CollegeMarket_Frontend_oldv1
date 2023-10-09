@@ -1,0 +1,26 @@
+.ListingItem {
+  text-decoration: none;
+  border-radius: 20px;
+  box-shadow: 0px 5px 10px 0px rgba(111 111 111 / 50%);
+  padding: 15px;
+  margin: 15px;
+}
+
+.ListingItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
+}
+
+.ListingText {
+  text-decoration: none;
+  color: black;
+}
+
+.SearchItemrow {
+  padding: 35px;
+  display: flex;
+  list-style-type: none;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}

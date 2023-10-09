@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./SearchProduct.css";
 
 const SearchProduct = ({ ProductId, ImageUrl, Title, Price }) => {
   return (
     <div>
-      <div>
-        <Link to={`/item/${ProductId}`}>
+      <div className="SearchItem">
+        <Link to={`/item/${ProductId}`} className="SearchText">
           <img
             src={`https://localhost:5001/images/${ImageUrl[0].url}`}
             alt={Title}
