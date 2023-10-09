@@ -1,0 +1,24 @@
+.MessageFormTitle {
+  position: relative;
+  padding: 10px;
+}
+.MessageFormButton {
+  position: relative;
+  left: 50px;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #49403e;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 15px;
+  padding: 20px;
+  max-width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.MessageFormButton:hover {
+  background-color: #685d5a;
+}

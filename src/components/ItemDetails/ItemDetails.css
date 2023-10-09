@@ -1,0 +1,34 @@
+.ImageDisplay {
+  position: relative;
+  top: 35px;
+  left: 70px;
+  height: 400px;
+  width: 400px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+.ImageDisplay img {
+  position: relative;
+  top: 5px;
+}
+
+.Description {
+  position: relative;
+  width: fit-content;
+  margin: 17;
+  font-size: 20px;
+  top: -350px;
+  left: 650px;
+}
+
+.ItemText {
+  margin: 25px;
+}
+
+.MessageForm {
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  height: 175px;
+  width: 300px;
+  position: relative;
+  left: 100px;
+  top: -315px;
+}

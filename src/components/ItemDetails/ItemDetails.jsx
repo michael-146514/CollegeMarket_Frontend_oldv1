@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import CreateMessageForm from "../CreateMessageForm/CreateMessageForm";
+import "./ItemDetails.css";
 
 const ItemDetails = ({
   imageNames,
@@ -38,20 +39,25 @@ const ItemDetails = ({
 
   return (
     <div>
-      <h2>{title}</h2>
-      <p>Price: ${price}</p>
-      <p>Description: {description}</p>
-      <p>Condition: {condition}</p>
-      <p>Category: {category}</p>
-      <p>Zipcode: {zipcode}</p>
-      <p>Status: {status}</p>
+      <div className="ImageDisplay">
+        {images.map((image, index) => (
+          <div key={image.title}>
+            <img src={image.imageSrc} alt={image.title} width="400" />
+          </div>
+        ))}
+      </div>
 
-      {images.map((image, index) => (
-        <div key={image.title}>
-          <img src={image.imageSrc} alt={image.title} width="250" />
-        </div>
-      ))}
-      <div>
+      <div className="Description">
+        <h2 className="Title">{title}</h2>
+        <h3 className="ItemText">Price: ${price}</h3>
+        <h3 className="ItemText">Description: {description}</h3>
+        <h3 className="ItemText">Condition: {condition}</h3>
+        <h3 className="ItemText">Category: {category}</h3>
+        <h3 className="ItemText">Zipcode: {zipcode}</h3>
+        <h3 className="ItemText">Status: {status}</h3>
+      </div>
+
+      <div className="MessageForm">
         <CreateMessageForm title={title} sellerId={sellerId} />
       </div>
     </div>

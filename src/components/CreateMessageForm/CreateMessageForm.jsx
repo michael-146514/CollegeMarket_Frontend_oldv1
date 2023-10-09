@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import { Link } from "react-router-dom";
+import "./CreateMessageForm.css";
 
 const CreateMessageForm = ({ SellerId, title }) => {
   const [message, setMessage] = useState("");
@@ -40,21 +41,25 @@ const CreateMessageForm = ({ SellerId, title }) => {
   return (
     <div>
       <div>
-        <h3>Message Seller</h3>
+        <h3 className="MessageFormTitle">Contact Seller</h3>
       </div>
       {user ? (
         <>
           <div>
             <form onSubmit={CreateConversations}>
               <div>
-                <button type="submit">Message Seller</button>
+                <button type="button" class="MessageFormButton">
+                  Message Seller
+                </button>
               </div>
             </form>
           </div>
         </>
       ) : (
         <Link to={`/login`}>
-          <button>Login</button>
+          <button type="button" class="MessageFormButton">
+            Login
+          </button>
         </Link>
       )}
     </div>
