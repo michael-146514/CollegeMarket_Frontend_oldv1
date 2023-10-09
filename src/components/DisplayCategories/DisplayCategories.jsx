@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./DisplayCategories.css";
 
 const DisplayCategories = ({ categorie }) => {
   const [products, setProducts] = useState([]);
@@ -23,28 +24,30 @@ const DisplayCategories = ({ categorie }) => {
   }, []);
 
   return (
-    <div>
-      <h3>{categorie}:</h3>
+    <div className="bigBox">
+      <h3 className="categorieName">{categorie}:</h3>
 
       <div>
         {products.length < 1 ? (
           <h3>No Search Result!</h3>
         ) : (
-          <ul>
-            {products.slice(0, 5).map((product) => (
-              <li key={product.id}>
-                <Link to={`/item/${product.id}`}>
-                  <img
-                    src={`https://localhost:5001/images/${product.imageUrls[0].url}`}
-                    alt={product.title}
-                    width="200"
-                    height="200"
-                  />
-                  <h3>
-                    {product.title} | ${product.price}
-                  </h3>
-                </Link>
-              </li>
+          <ul className="itemrow">
+            {products.slice(0, 6).map((product) => (
+              <div className="item">
+                <li key={product.id}>
+                  <Link to={`/item/${product.id}`} className="productText">
+                    <img
+                      src={`https://localhost:5001/images/${product.imageUrls[0].url}`}
+                      alt={product.title}
+                      width="200"
+                      height="200"
+                    />
+                    <h3>
+                      {product.title} | ${product.price}
+                    </h3>
+                  </Link>
+                </li>
+              </div>
             ))}
           </ul>
         )}
