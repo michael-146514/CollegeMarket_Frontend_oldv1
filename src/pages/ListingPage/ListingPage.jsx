@@ -9,8 +9,9 @@ const ListingPage = ({}) => {
         <Link to={`/listings/create`}>
           <button>Create Listing</button>
         </Link>
-
-        <button> Messages</button>
+        <Link to={`/conversations`}>
+          <button> Messages</button>
+        </Link>
       </div>
       <hr />
       <div>

@@ -32,7 +32,6 @@ import PrivateRoute from "./utils/PrivateRoute";
 function App() {
   const [user, token] = useAuth();
 
-  console.log(user.isAdmin);
   return (
     <div>
       <Navbar />

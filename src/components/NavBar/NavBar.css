@@ -7,13 +7,18 @@ ul {
 li {
   font-size: 1.25rem;
 }
+li b {
+  position: absolute;
+  font-size: 25px;
+  top: 20px;
+}
 
 .navBar {
   background: #22333b;
   box-shadow: 4px 2px 5px gray;
   color: white;
   margin-bottom: 2rem;
-  padding: 1.5rem 2rem;
+  padding: 36.5px;
 }
 
 .navBar button {
@@ -91,10 +96,12 @@ li {
 
 .user {
   position: absolute;
+  top: 7px;
   right: 25px;
 }
 
 .searchBar {
+  top: 17px;
   display: flex;
   justify-content: center;
   align-items: center;

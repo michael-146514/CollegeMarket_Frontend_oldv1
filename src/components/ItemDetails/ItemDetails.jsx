@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import CreateMessageForm from "../CreateMessageForm/CreateMessageForm";
 
 const ItemDetails = ({
   imageNames,
@@ -10,6 +11,7 @@ const ItemDetails = ({
   category,
   zipcode,
   status,
+  sellerId,
 }) => {
   const [images, setImages] = useState([]);
 
@@ -49,6 +51,9 @@ const ItemDetails = ({
           <img src={image.imageSrc} alt={image.title} width="250" />
         </div>
       ))}
+      <div>
+        <CreateMessageForm title={title} sellerId={sellerId} />
+      </div>
     </div>
   );
 };

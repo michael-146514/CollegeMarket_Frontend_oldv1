@@ -70,6 +70,7 @@ const ItemPage = ({}) => {
           category={item.category}
           zipcode={item.zipcode}
           status={item.status}
+          sellerId={item.sellerId}
         />
       </div>
     </div>
