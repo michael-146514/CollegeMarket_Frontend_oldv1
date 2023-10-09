@@ -23,13 +23,12 @@ li b {
 
 .navBar button {
   background: transparent;
-  border: 2px solid white;
+
   color: white;
   padding: 0.4rem 0.5rem;
 }
 
 .navBar button:hover {
-  background: white;
   color: rgb(0, 0, 0);
   cursor: pointer;
 }
@@ -108,4 +107,33 @@ li b {
   position: absolute;
   left: 50%; /* Move the search bar to the horizontal center */
   transform: translateX(-50%); /* Adjust for half of the search bar width */
+  border: none;
+  padding-left: 5px;
+}
+
+.Submit {
+  position: relative;
+  top: 4px;
+  align-content: center;
+  border: 0px;
+}
+
+.SearchItems {
+  font-size: large;
+  text-decoration: none;
+  width: 400px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  padding-left: 10px;
+}
+.SearchZipcode {
+  font-size: large;
+  margin-left: 20px;
+  text-decoration: none;
+  text-align: center;
+  width: 85px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
 }

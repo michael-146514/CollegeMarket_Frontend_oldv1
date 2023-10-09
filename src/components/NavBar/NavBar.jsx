@@ -5,13 +5,14 @@ import AuthContext from "../../context/AuthContext";
 import "./NavBar.css";
 import { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
+import { AiOutlineSend } from "react-icons/ai";
 
 const Navbar = () => {
   const { logoutUser, user } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const [query, setQuery] = useState("");
-  const [zipcode, setZipcode] = useState("");
+  const [zipcode, setZipcode] = useState("53040");
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -32,17 +33,21 @@ const Navbar = () => {
         <form onSubmit={handleSearch} className="searchBar">
           <input
             type="text"
+            className="SearchItems"
             placeholder="Search for items"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
           <input
             type="text"
-            placeholder="Enter Zipcode"
+            className="SearchZipcode"
+            placeholder="Zipcode"
             value={zipcode}
             onChange={(e) => setZipcode(e.target.value)}
           />
-          <button type="submit">Search</button>
+          <button type="submit" className="Submit">
+            <AiOutlineSend size={25} />
+          </button>
         </form>
         <li className="user">
           <div class="dropdown">
