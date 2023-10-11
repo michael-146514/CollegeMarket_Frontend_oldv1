@@ -14,6 +14,7 @@ import EditItemPage from "./pages/EditItemPage/EditItemPage";
 import SearchedPage from "./pages/SearchPage/SearchPage";
 import ConversationsPage from "./pages/ConversationsPage/ConversationsPage";
 import MessagePage from "./pages/MessagePage/MessagePage";
+import MyAccountPage from "./pages/MyAccountPage/MyAccountPage";
 
 //Admin Pages imports
 import AdminHomePage from "./pages/Adminpages/AdminHomePage.jsx/AdminHomePage";
@@ -40,6 +41,14 @@ function App() {
         <Route path="/search" element={<SearchedPage />} />
         <Route path="/item/:id" element={<ItemPage />} />
         <Route path="/listings" element={<ListingPage />} />
+        <Route
+          path="/MyAccount"
+          element={
+            <PrivateRoute>
+              <MyAccountPage />
+            </PrivateRoute>
+          }
+        />
         <Route
           path="/listings/create"
           element={
