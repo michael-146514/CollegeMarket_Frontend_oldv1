@@ -15,6 +15,7 @@ import SearchedPage from "./pages/SearchPage/SearchPage";
 import ConversationsPage from "./pages/ConversationsPage/ConversationsPage";
 import MessagePage from "./pages/MessagePage/MessagePage";
 import MyAccountPage from "./pages/MyAccountPage/MyAccountPage";
+import WatchListPage from "./pages/WatchListPage/WatchListPage";
 
 //Admin Pages imports
 import AdminHomePage from "./pages/Adminpages/AdminHomePage.jsx/AdminHomePage";
@@ -46,6 +47,14 @@ function App() {
           element={
             <PrivateRoute>
               <MyAccountPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/MyAccount/watchlist"
+          element={
+            <PrivateRoute>
+              <WatchListPage />
             </PrivateRoute>
           }
         />

@@ -59,6 +59,7 @@ const Navbar = () => {
             <div class="dropdown-content">
               {user ? (
                 <>
+                  <a href="/myaccount">My Account</a>
                   <a href="/listings">Your Listings</a>
                   <a href="/conversations">Messages</a>
                   <a onClick={logoutUser}>Logout</a>
