@@ -66,6 +66,7 @@ const RegisterPage = () => {
             onChange={handleInputChange}
           />
         </label>
+
         <button>Register!</button>
       </form>
     </div>
