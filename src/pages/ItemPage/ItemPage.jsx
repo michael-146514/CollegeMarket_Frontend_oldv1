@@ -9,6 +9,7 @@ const ItemPage = ({}) => {
   const { id } = useParams();
 
   const [item, setItem] = useState({
+    id: 0,
     title: "",
     price: 0,
     description: "",
@@ -28,6 +29,7 @@ const ItemPage = ({}) => {
 
       const productdetails = response.data;
       const productInfo = {
+        id: productdetails.id,
         title: productdetails.title || "No Title Available",
         price: productdetails.price || 0,
         description: productdetails.description || "No description",
@@ -71,6 +73,7 @@ const ItemPage = ({}) => {
           zipcode={item.zipcode}
           status={item.status}
           sellerId={item.sellerId}
+          id={item.id}
         />
       </div>
     </div>

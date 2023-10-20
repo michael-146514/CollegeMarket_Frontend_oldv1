@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import CreateMessageForm from "../CreateMessageForm/CreateMessageForm";
 import "./ItemDetails.css";
+import FavoriteForm from "../FavoriteForm/FavoriteForm";
 
 const ItemDetails = ({
   imageNames,
@@ -13,6 +14,7 @@ const ItemDetails = ({
   zipcode,
   status,
   sellerId,
+  id,
 }) => {
   const [images, setImages] = useState([]);
 
@@ -59,6 +61,9 @@ const ItemDetails = ({
 
       <div className="MessageForm">
         <CreateMessageForm title={title} sellerId={sellerId} />
+      </div>
+      <div>
+        <FavoriteForm id={id} />
       </div>
     </div>
   );
