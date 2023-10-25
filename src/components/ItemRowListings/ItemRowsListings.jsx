@@ -48,7 +48,7 @@ const ItemRowsListings = ({}) => {
       <ul className="SearchItemrow">
         {Listings.map((listing) => (
           <li key={listing.id}>
-            <Link to={`/listings/edit/${listing.id}`}>
+            <Link to={`/myaccount/seller/edit/${listing.id}`}>
               <div className="ListingItem">
                 {listing.imageUrls.length > 0 && (
                   <img

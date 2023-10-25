@@ -29,7 +29,7 @@ const CreateMessageForm = ({ SellerId, title }) => {
       setConversations(response.data.id);
 
       if (response.status === 200 || response.status === 201) {
-        window.location.href = `/conversations/message/${response.data.id}`;
+        window.location.href = `/myaccount/conversations/message/${response.data.id}`;
       } else {
         console.log("Failed to create conversation");
       }

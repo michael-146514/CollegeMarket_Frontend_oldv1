@@ -7,10 +7,10 @@ const ListingPage = ({}) => {
   return (
     <div>
       <div className="CreateBox">
-        <Link to={`/listings/create`}>
+        <Link to={`create`}>
           <button className="ButtonsListings">Create Listing</button>
         </Link>
-        <Link to={`/conversations`}>
+        <Link to={`/myaccount/conversations`}>
           <button className="ButtonsListings"> Messages</button>
         </Link>
       </div>

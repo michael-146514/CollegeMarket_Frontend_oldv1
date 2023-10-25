@@ -11,8 +11,13 @@ const MyAccountPage = ({}) => {
         <h1>Hello: {user.userName}</h1>
       </div>
       <div className="CreateBox">
-        <button>Seller Page</button>
-        <button>Messages</button>
+        <Link to={"seller"}>
+          <button>Seller Page</button>
+        </Link>
+        <Link to={"conversations"}>
+          <button>Messages</button>
+        </Link>
+
         <button>Watch List</button>
         <button>Account Settings</button>
       </div>

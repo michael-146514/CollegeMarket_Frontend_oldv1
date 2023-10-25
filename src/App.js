@@ -16,6 +16,7 @@ import ConversationsPage from "./pages/ConversationsPage/ConversationsPage";
 import MessagePage from "./pages/MessagePage/MessagePage";
 import MyAccountPage from "./pages/MyAccountPage/MyAccountPage";
 import WatchListPage from "./pages/WatchListPage/WatchListPage";
+import SellerPage from "./pages/SellerPage/SellerPage";
 
 //Admin Pages imports
 import AdminHomePage from "./pages/Adminpages/AdminHomePage.jsx/AdminHomePage";
@@ -41,7 +42,14 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/search" element={<SearchedPage />} />
         <Route path="/item/:id" element={<ItemPage />} />
-        <Route path="/listings" element={<ListingPage />} />
+        <Route
+          path="/myaccount/seller"
+          element={
+            <PrivateRoute>
+              <ListingPage />
+            </PrivateRoute>
+          }
+        />
         <Route
           path="/MyAccount"
           element={
@@ -50,6 +58,7 @@ function App() {
             </PrivateRoute>
           }
         />
+
         <Route
           path="/MyAccount/watchlist"
           element={
@@ -59,7 +68,7 @@ function App() {
           }
         />
         <Route
-          path="/listings/create"
+          path="/MyAccount/seller/create"
           element={
             <PrivateRoute>
               <CreateItemPage />
@@ -67,7 +76,7 @@ function App() {
           }
         />
         <Route
-          path="/listings/edit/:id"
+          path="/MyAccount/seller/edit/:id"
           element={
             <PrivateRoute>
               <EditItemPage />
@@ -75,7 +84,7 @@ function App() {
           }
         />
         <Route
-          path="/conversations"
+          path="/Myaccount/conversations"
           element={
             <PrivateRoute>
               <ConversationsPage />
@@ -83,7 +92,7 @@ function App() {
           }
         />
         <Route
-          path="/conversations/message/:id"
+          path="/Myaccount/conversations/message/:id"
           element={
             <PrivateRoute>
               <MessagePage />

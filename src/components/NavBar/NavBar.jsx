@@ -60,8 +60,8 @@ const Navbar = () => {
               {user ? (
                 <>
                   <a href="/myaccount">My Account</a>
-                  <a href="/listings">Your Listings</a>
-                  <a href="/conversations">Messages</a>
+                  <a href="/myaccount/seller">Seller Page</a>
+                  <a href="/myaccount/conversations">Messages</a>
                   <a onClick={logoutUser}>Logout</a>
                 </>
               ) : (
