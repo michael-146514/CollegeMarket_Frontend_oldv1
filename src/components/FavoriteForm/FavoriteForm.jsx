@@ -16,17 +16,19 @@ const FavoriteForm = ({ id }) => {
         },
       }
     );
-    console.log(response);
-    setFavorite(response.data);
 
-    console.log(isFavorite);
+    setFavorite(response.data);
   };
 
   useEffect(() => {
     checkIsFavorite();
   });
 
-  return <div></div>;
+  return (
+    <div>
+      <button>Favorite</button>
+    </div>
+  );
 };
 
 export default FavoriteForm;
