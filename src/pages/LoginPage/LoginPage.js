@@ -1,50 +1,77 @@
-import React, { useContext, useEffect } from "react";
-import AuthContext from "../../context/AuthContext";
-import useCustomForm from "../../hooks/useCustomForm";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { auth } from "../../hooks/firebase";
 import "./LoginPage.css";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const LoginPage = () => {
-  const { loginUser, isServerError } = useContext(AuthContext);
-  const defaultValues = { userName: "", password: "" };
-  const [formData, handleInputChange, handleSubmit, reset] = useCustomForm(
-    loginUser,
-    defaultValues
-  );
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
 
-  useEffect(() => {
-    if (isServerError) {
-      reset();
+  const handleSignIn = async () => {
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+      // Handle successful sign-in (e.g., redirect to dashboard)
+      console.log("Logged in as:", email);
+    } catch (error) {
+      setError(error.message);
     }
-  }, [isServerError]);
+  };
+
+  const handleSignUp = async () => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+      console.log("Registered and logged in as:", user.email);
+      // Handle successful registration
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  const handlePasswordReset = async () => {
+    try {
+      await auth.sendPasswordResetEmail(email);
+      // Handle successful password reset request (e.g., show success message)
+      console.log("Password reset email sent to:", email);
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  const handleSignOut = async () => {
+    try {
+      await auth.signOut();
+      // Handle successful sign-out
+      console.log("Logged out");
+    } catch (error) {
+      setError(error.message);
+    }
+  };
 
   return (
-    <div className="container">
-      <form className="form" onSubmit={handleSubmit}>
-        <label>
-          Username:{" "}
-          <input
-            type="text"
-            name="userName"
-            value={formData.userName}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          Password:{" "}
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleInputChange}
-          />
-        </label>
-        {isServerError ? (
-          <p className="error">Login failed, incorrect credentials!</p>
-        ) : null}
-        <Link to="/register">Click to register!</Link>
-        <button>Login!</button>
-      </form>
+    <div>
+      <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button onClick={handleSignIn}>Sign In</button>
+      <button onClick={handleSignUp}>Sign Up</button>
+      <button onClick={handlePasswordReset}>Reset Password</button>
+      <button onClick={handleSignOut}>Sign Out</button>
+      {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );
 };
